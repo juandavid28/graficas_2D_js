@@ -23,9 +23,11 @@
             canvas.width = BASE;
             canvas.height = ALTURA;
 
-            if(canvas && canvas.getContext){
+            if(canvas && canvas.getContext)
+            {
                 var ctx = canvas.getContext("2d")
-                if (ctx){
+                if (ctx)
+                {
                     ctx.font = "2en verdana";
                     ctx.lineWidth = 1.0;
                     ctx.fillStyle = "blue";
@@ -38,10 +40,7 @@
                     //
                     ctx.fillText("SISTEMAS", BASE/2, ALTURA/2);
                     ctx.strokeText("SISTEMAS", BASE/2, ALTURA/2);
-                    ctx.fillRect(200,200,150,50)
-                    
-                    
-                    
+                    ctx.fillRect(200,200,150,50)  
                 }
                 else{
                     alert("Error al crear el contexto")
