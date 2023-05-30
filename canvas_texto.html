@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAFICOS</title>
+    <style>
+        #miCanvas{
+            border:  dotted 5px yellow;
+            background-color: rgb(133, 81, 5);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            var canvas = document.getElementById("miCanvas");
+
+            const BASE = 500;
+            const ALTURA = 300;
+            
+            canvas.width = BASE;
+            canvas.height = ALTURA;
+
+            if(canvas && canvas.getContext){
+                var ctx = canvas.getContext("2d")
+                if (ctx){
+                    ctx.font = "2en verdana";
+                    ctx.lineWidth = 1.0;
+                    ctx.fillStyle = "blue";
+                    ctx.strokeStyle = "yellow";
+                    //
+                    ctx.shadowColor= "black";
+                    ctx.shadowOffsetX = 5;
+                    ctx.shadowOffsetY = 5; 
+                    ctx.shadowBlur = 10;
+                    //
+                    ctx.fillText("SISTEMAS", BASE/2, ALTURA/2);
+                    ctx.strokeText("SISTEMAS", BASE/2, ALTURA/2);
+                    ctx.fillRect(200,200,150,50)
+                    
+                    
+                    
+                }
+                else{
+                    alert("Error al crear el contexto")
+                }
+            }
+
+        }
+    </script>
+    <body>
+        <h1>Graficas 2D con HTML y Javascript</h1>
+        <div id="canvas-container">
+            <canvas id="miCanvas" width="660px" height="480px">Tu navegador no soporta </canvas>
+        </div> 
+    </body>
+</body>
+</html>

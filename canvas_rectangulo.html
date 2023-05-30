@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #miCanvas{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Graficas 2D con HTML y Javascript</h1>
+    <canvas id="miCanvas" width="500px" height="300px">Tu navegador no soporta </canvas>
+    <script>
+        window.onload = function()
+        {
+            var canvas = document.getElementById("miCanvas")
+
+            const BASE = 500;
+            const ALTURA = 300;
+
+            canvas.width = BASE
+            canvas.height = ALTURA
+
+            if(canvas && canvas.getContext)
+            {
+                var ctx = canvas.getContext("2d")
+                if (ctx){
+                    //alert("Bienvenido al canvas")
+                    ctx.fillStyle = 'yellow'
+                    ctx.strokeStyle = 'black'
+                    ctx.lineWidth = 5;
+                    
+                    //rectangulo que cubra medio canvas
+
+                    ctx.fillStyle = 'white'
+                    ctx.fillRect(0,120,800,70)
+
+                    ctx.fillStyle = 'blue'
+                    
+                    ctx.fillRect(0,130,800,50)
+                    //dibujar rectangulo
+                    ctx.fillStyle = 'white'
+                    ctx.fillRect(150,0,70,400)
+
+                    ctx.fillStyle = 'blue'
+                    ctx.fillRect(160,0,50,400)
+
+                    ctx.fillStyle = 'white'
+                    ctx.fillRect(150,120,60,70)
+
+                    ctx.fillStyle = 'blue'
+                    ctx.fillRect(150,130,70,50)
+
+                    ctx.fillStyle = 'blue'
+                    ctx.fillRect(160,120,50,80)
+                }
+                else{
+                    alert("Error al crear el contexto")
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

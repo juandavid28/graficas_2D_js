@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAFICOS</title>
+    <style>
+        #miCanvas{
+            background-color: rgb(126, 65, 16);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            var canvas = document.getElementById("miCanvas");
+
+            const BASE = 500;
+            const ALTURA = 300;
+            
+            canvas.width = BASE;
+            canvas.height = ALTURA;
+
+            if(canvas && canvas.getContext){
+                var ctx = canvas.getContext("2d")
+                if (ctx)
+                {
+                    ctx.lineWidth = 10;
+                    ctx.fillStyle = "yellow";
+                    ctx.strokeStyle = "red";
+
+                    //primer cuadro
+                    ctx.fillRect(50,50,100,100);
+                    ctx.strokeRect(50,50,100,100);
+
+                    //GUardamos el estado
+                    ctx.save();
+
+                    // modificamos los colores
+                    ctx.fillStyle = "black";
+                    ctx.strokeStyle = "white";
+
+                    // segundo cuadro
+                    ctx.fillRect(200,50,100,100);
+                    ctx.strokeRect(200,50,100,100);
+
+                    // restauramos colores
+                    ctx.restore();
+
+                    // tercer cuadro
+                    ctx.fillRect(350,50,100,100);
+                    ctx.strokeRect(350,50,100,100);
+
+
+                }
+                else
+                {
+                    alert("Error al crear el contexto")
+                }
+            }
+
+        }
+    </script>
+    <body>
+        <h1>Graficas 2D con HTML y Javascript</h1>
+        <div id="canvas-container">
+            <canvas id="miCanvas" width="660px" height="480px">Tu navegador no soporta </canvas>
+        </div> 
+    </body>
+</body>
+</html>

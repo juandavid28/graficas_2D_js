@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #miCanvas{
+            border: dotted 5px yellow ;
+            background-color: coral;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+
+            var canvas = document.getElementById("miCanvas")
+
+            const BASE = canvas.width
+
+            const ALTURA = canvas.height
+
+            if(canvas && canvas.getContext){
+
+                var ctx = canvas.getContext("2d")
+
+                if (ctx){
+                    //alert("Bienvenido al canvas")
+                    ctx.strokeStyle = "black"
+                    ctx.lineWidth = 5
+                    
+                    ctx.beginPath()
+                    ctx.moveTo(BASE/2,0)
+                    ctx.lineTo(BASE/2,ALTURA)
+                    ctx.stroke()
+
+                    ctx.strokeStyle= "red"
+                    ctx.beginPath()
+                    ctx.moveTo(0,ALTURA/2)
+                    ctx.lineTo(BASE,ALTURA/2)
+                    ctx.stroke()
+
+                    ctx.strokeStyle = "yellow"
+                    ctx.beginPath()
+                    ctx.moveTo(BASE/2,0)
+                    ctx.lineTo(0,ALTURA/2)
+                    ctx.stroke()
+
+                    ctx.strokeStyle = "green"
+                    ctx.beginPath()
+                    ctx.moveTo(BASE/2,0)
+                    ctx.lineTo(BASE,ALTURA/2)
+                    ctx.stroke()
+
+                    ctx.strokeStyle = "purple"
+                    ctx.beginPath()
+                    ctx.moveTo(0,ALTURA/2)
+                    ctx.lineTo(BASE/2,ALTURA)
+                    ctx.stroke()
+
+                    ctx.strokeStyle = "cyan"
+                    ctx.beginPath()
+                    ctx.moveTo(BASE,ALTURA/2)
+                    ctx.lineTo(BASE/2,ALTURA)
+                    ctx.stroke()
+
+                    ctx.strokeStyle = "gray"
+                    ctx.fillStyle = "brown"
+                    ctx.beginPath()
+                    ctx.moveTo(BASE,0)
+                    ctx.lineTo(BASE,0)
+                    ctx.lineTo(BASE,ALTURA/2)
+                    ctx.lineTo(0,ALTURA/2)
+                    ctx.fill()
+                    ctx.stroke()
+                }
+                else{
+
+                    alert("Error al crear el contexto")
+
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Graficas 2D con HTML y Javascript</h1>
+    <div id="canvas-container">
+        <canvas id="miCanvas" width="660px" height="480px">Tu navegador no soporta </canvas>
+    </div> 
+</body>
+</html>
